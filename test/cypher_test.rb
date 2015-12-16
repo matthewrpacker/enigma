@@ -3,40 +3,44 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/cypher'
 
-
-
-class CharacterMapTest < Minitest::Test
+class CypherTest < Minitest::Test
   def test_letter_output_based_on_array_index
-    characters = CharacterMap.new
-    assert_equal "a", characters.c_map[0]
-    assert_equal "z", characters.c_map[25]
+    cypher = Cypher.new
+    assert_equal "a", cypher.c_map[0]
+    assert_equal "z", cypher.c_map[25]
   end
 
   def test_integer_output_based_on_array_index
-    characters = CharacterMap.new
-    assert_equal 0, characters.c_map[26]
-    assert_equal 9, characters.c_map[35]
+    cypher = Cypher.new
+    assert_equal 0, cypher.c_map[26]
+    assert_equal 9, cypher.c_map[35]
   end
 #test for reverse or rotate
-  def test_characters_based_on_array_index
-    characters = CharacterMap.new
-    assert_equal ".", characters.c_map[37]
-    assert_equal ",", characters.c_map[38]
+  def test_cypher_based_on_array_index
+    cypher = Cypher.new
+    assert_equal ".", cypher.c_map[37]
+    assert_equal ",", cypher.c_map[38]
   end
 
-  def test_characters_based_on_sequence
-    characters = CharacterMap.new
-    assert_equal ["b", "c", "d", "e"], characters.c_map.slice(1,4)
+  def test_reverse_cypher_based_on_array_index
+    cypher = Cypher.new
+    assert_equal ".", cypher.rev_c_map[1]
+    assert_equal ",", cypher.rev_c_map[0]
   end
 
-  def test_map_length_is_38_characters
-    characters = CharacterMap.new
-    assert_equal 39, characters.c_map.length
+  def test_cypher_based_on_sequence
+    cypher = Cypher.new
+    assert_equal ["b", "c", "d", "e"], cypher.c_map.slice(1,4)
+  end
+
+  def test_map_length_is_38_cypher
+    cypher = Cypher.new
+    assert_equal 39, cypher.c_map.length
   end
 
   def test_character_output_by_random_index
-    characters = CharacterMap.new
-    assert_equal ["c", "n", 0, " "], characters.c_map.values_at(2,13,26,36)
+    cypher = Cypher.new
+    assert_equal ["c", "n", 0, " "], cypher.c_map.values_at(2,13,26,36)
   end
 
 

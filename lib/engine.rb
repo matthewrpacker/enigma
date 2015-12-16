@@ -10,7 +10,7 @@ class Engine
     num = [*0..9]
     return num.sample(5)
   end
-
+#refactor initialized that are not needed
   def key_gen
     @five_num = five_rand
     a = @five_num[0..1].join("")
@@ -37,10 +37,19 @@ class Engine
     # puts "#{a}, #{b}"
   end
 
+  # def ultimate_offset
+  #   gen = key_gen
+  #   off = date_assignment
+  #   comb_array = gen.zip(off)
+  #   a = comb_array[0]
+  #   b = comb_array[1]
+  #   c = comb_array[2]
+  #   d = comb_array[3]
+  #   return step_one = [a,b,c,d]
+  # end
+
   def ultimate_offset
-    gen = key_gen
-    off = date_assignment
-    comb_array = gen.zip(off)
+    comb_array = key_gen.zip(date_assignment)
     a = comb_array[0]
     b = comb_array[1]
     c = comb_array[2]
@@ -72,8 +81,8 @@ class Engine
 end
 
 # engine = Engine.new
-# # # puts engine.key_gen
-# # puts engine.date_offset
-# # puts engine.date_assignment
-# # puts engine.ultimate_offset
+# # puts engine.key_gen
+# puts engine.date_offset
+# puts engine.date_assignment
+# puts engine.ultimate_offset
 # engine.cryptor

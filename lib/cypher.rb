@@ -1,11 +1,10 @@
 require "pry"
 
-class CharacterMap
-  attr_reader :c_map
+class Cypher
+  attr_reader :c_map, :rev_c_map
   def initialize
-    letters = ("a".."z").to_a
-    numbers = (0..9).to_a
-    @c_map = letters + numbers + [" ", ".", ","]
+    @c_map = [*"a".."z",*"0".."9"," ",".",","]
+    @rev_c_map = @c_map.reverse
   end
 end
 
