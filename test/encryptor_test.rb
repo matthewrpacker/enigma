@@ -38,7 +38,7 @@ class EncryptorTest < Minitest::Test
   # end
 
   def test_message_encrypts
-    encrypt = Encryptor.new("hello world")
+    encrypt = Encryptor.new("hello world")   
     refute_equal "hello world", encrypt.encrypted
   end
 
