@@ -10,7 +10,7 @@ class Engine
   end
 
   def five_num
-    num = [5,4,3,2,1]
+    [5,4,3,2,1]
   end
 
   def key_generator
@@ -18,7 +18,7 @@ class Engine
     b = five_num[1..2].join("")
     c = five_num[2..3].join("")
     d = five_num[3..4].join("")
-    return final_key_generator = [a,b,c,d]
+    return [a,b,c,d]
   end
 
   def date_offset
@@ -41,7 +41,7 @@ class Engine
     b = comb_array[1]
     c = comb_array[2]
     d = comb_array[3]
-    return first_step = [a,b,c,d]
+    return [a,b,c,d]
   end
 
   def total_offset
@@ -54,7 +54,7 @@ class Engine
     b = b1[0].to_i + b1[1].to_i
     c = c1[0].to_i + c1[1].to_i
     d = d1[0].to_i + d1[1].to_i
-    return ultra_cryptor = [a,b,c,d]
+    return [a,b,c,d]
   end
 
 end
